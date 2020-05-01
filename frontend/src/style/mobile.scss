@@ -1,0 +1,236 @@
+@import "global";
+
+$paddingSide: 8vw;
+$bodyText: 4.5vw;
+.mobile{
+    color: $greyX;
+    .firstView{
+        // background-color: blue;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include landscape{
+            height: 85vh;
+            margin-top: 15vh;
+        }
+        
+        video{
+          max-width: 100%;
+            @include landscape{
+                max-height: 100%;
+                max-width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        .arrow {
+          // background-color: olive;
+          position: relative;
+          top: 15%;
+          height: 10%;
+          .arrowImg{
+            position: absolute;
+            left: 46%;
+            top: 20%;
+            max-width: 8%;
+            animation: arrowBounce 2s infinite ease-in-out;
+          }
+        }
+
+    }
+
+    .logoHeader{
+        @include landscape{
+            height: 15vh;
+        }
+        position: fixed;
+        height: 10vh;
+        top: 0;
+        left: 36.5%;
+        width: 27vw;
+        padding-top:5vh;
+        z-index: 100;
+        .logoImg{
+            background-color: #060608;
+            max-height: 100%;
+            @include landscape{
+                background-color: transparent;
+            }
+        }
+    }
+    
+    .firstText{
+        // background-color: red;
+        @include landscape{
+            padding: 70vh $paddingSide;
+            line-height: $bodyText;
+        }
+        padding: 10vh $paddingSide;
+        padding-bottom: 0vh;
+        display: flex;
+        &>h1{
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            color: $goldX;
+            font-family: $sans;
+            align-items:flex-start;
+        }
+        &>div{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-size: $bodyText;
+            width: 55%;
+            font-family: $serrif;
+        }
+    }
+
+    .animateThis{
+        span, p{
+            opacity: 0;
+            filter: blur(4px);
+            transform: translateX(-5px);
+        }
+    }
+
+    .count{
+        // background-color: blue;
+        padding: 22vh $padding;
+        padding-bottom: 0vh;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 40vh;
+        .container{
+            border-top: solid $goldX 1px;
+            border-bottom: solid $goldX 1px;
+            overflow: hidden;
+            height: 0vw;
+            margin: auto;
+            width: 0vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            &>div{
+                margin: auto;
+                height: fit-content;
+                width: fit-content;
+            }
+        }
+        h1{
+            font-family: $sans;
+            font-size: 20vw;
+            line-height: 50%;
+            padding-top: 11vw; //half of font size
+            color: $goldX;
+        }
+        p{
+            font-family: $serrif;
+            font-size: $bodyText
+        }
+    }
+
+    .secondText{
+        // background-color: pink;
+        padding-top: 4vh;
+        padding-bottom: 22vh;
+        display: flex;
+        &>h1{
+            height: 70vw;
+            justify-content: space-around;
+            @include landscape{
+                height: 80vh;
+            }
+        }
+        &>div{
+            font-size: $bodyText;
+            height: 76.3vw;
+            width: 55%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+    
+    .mobileForm{
+
+        div {
+          border-radius: 0.1;
+        }
+
+        .email {
+          margin-bottom: 1vh;
+        }
+
+        .file {
+          margin-bottom: 1vh;
+        }
+
+        .file:hover {
+          background-color: #060608;
+          color: $goldX
+        }
+
+        .file:active {
+          background-color: $goldX;
+          color: #060608;
+        }
+
+        .fileActive {
+          margin-bottom: 1vh;
+        }
+
+        .submit {
+          margin-bottom: 0.5vh;
+        }
+
+        .submit:hover {
+          background-color: #060608;
+          color: $goldX
+        }
+
+        .submit:active {
+          background-color: $goldX;
+          color: #060608;
+        }
+
+        .message {
+          left: 0%;
+          top: 110%;
+        }
+
+        // background-color: orange;
+        width: 22.5vw;
+        margin: auto;
+        transform: scale(3.5); //dude im CHEATING
+        margin-bottom: 6vh;
+        @include landscape{
+            transform: scale(2);
+            margin-bottom: 20vh;
+        }
+        .x{
+            display: none;
+        }
+        .emailText{
+            font-size: 1.7vw !important;
+        }
+    }
+
+    @keyframes arrowBounce {
+      0% { top: 20% }
+      50% { top: 5% }
+      100% { top: 20% }
+    }
+}
+
+
+
+
+
+
+

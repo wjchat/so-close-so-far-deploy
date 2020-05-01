@@ -1,0 +1,125 @@
+@import "global";
+
+.submissionContainer {
+    // background-color: pink;
+    color: white;
+    height: 100vh;
+    min-height: $minHeight;
+    display: grid;
+    grid-template-areas:
+        "top top"
+        "header form"
+        "text formBumper"
+        "bottom bottom"
+        ;
+    grid-template-rows: 15% 45% 20% 20%;
+    grid-template-columns: 1fr 1fr;
+    padding: 0% 6%;
+    .arrowUp{
+        // background-color: olive;
+        position: relative;
+        top: 0%;
+        grid-area: top;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 5;
+        img{
+            max-width: 2.5%;
+            margin: 0;
+            margin: auto;
+            transform: rotate(180deg);
+            box-sizing: content-box;
+            padding: 5px;
+            cursor: pointer;
+        }
+    }
+    & .header {
+        // background-color: yellow;
+        grid-area: header;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        margin: 0;
+        h1 {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            // background-color: red;
+            color: $goldX;
+            font-size: $giantText;
+            text-align: right;
+            width: 100%;
+            line-height: 90%;
+            font-family: $sans;
+        }
+    }
+    & .text {
+        // background-color: blue;
+        grid-area: text;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 86%;
+        left: 14%;
+        top: 0%;
+        .border{
+            position: absolute;
+            margin-top: 8%;
+            width: 100%;
+            left: 0%;
+            top: 0;
+            @include border;
+        }
+        p{
+            @include bodyText;
+            color: $greyX;
+            width: 40%;
+            margin-top: 10%;
+        }
+    }
+    & .formContainer {
+        // background-color: pink;
+        grid-area: form;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        .flexbox{
+            margin: 0;
+            margin-left: 27.25%;
+            margin-top: 50%;
+            margin-bottom: 0.5%;
+            // background-color: orange;
+            height: auto;
+            width: 57.5%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            //go to form items for each button's specific stylings
+        }
+    }
+    .animateUp{
+        opacity: 0;
+        filter: blur(4px);
+        transform: translateY(30px);
+    }
+
+    .formBumper {
+      // background-color: green;
+      grid-area: formBumper;
+      height: 100%;
+      width: 100%;
+    }
+    
+    .botContain{
+      position: relative;
+      // background-color: aqua;
+      grid-area: bottom;
+      height: 100%;
+      width: 100%;
+    }
+}
